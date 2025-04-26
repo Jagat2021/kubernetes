@@ -3,11 +3,14 @@ kind: Pod
 metadata:
   name: my-first-pod
   labels:
-    app: frondend
+    app: frontend
 spec:
   containers:
     - name: my-container
       image: nginx
       ports:
         - containerPort: 80
+      command: ["/bin/sh", "-c"]
+      args:
+        - echo 'HELLO NGINX' > /usr/share/nginx/html/index.html && nginx -g 'daemon off;'
 
