@@ -1,2 +1,2 @@
 # kubernetes
-Kubernetes Learning Resources
+Kubernetes Learning Resources - 2025
