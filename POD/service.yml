@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  selector:
+    app: frondend
+  ports:
+  - port: 80 # The port that the service will expose by kubernetes
+    targetPort: 80 # The nginx service is running on port 80
+    nodePort: 30000 # Port of docker host
+  type: NodePort
