@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: python-webapp
+  labels:
+    app: fastapi
+spec:
+  type: NodePort
+  ports:
+    - port: 8081 # Service port
+      targetPort: 8081 # Container port
+      protocol: TCP
+      nodePort: 30001 # This is the port on the each node
+  selector:
+    app: fastapi
