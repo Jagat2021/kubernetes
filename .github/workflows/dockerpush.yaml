@@ -52,7 +52,7 @@ jobs:
             git config user.name "jagat2021"
             git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
             git add apps/deployment.yaml
-            git commit -m "Update deployment.yaml with new image tag"
+            git commit -m "Update the deployment.yaml with new image tag"
             git push origin main
             
 
