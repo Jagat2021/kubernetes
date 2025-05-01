@@ -41,7 +41,7 @@ jobs:
       - name: update image tag in Kubernetes deployment
         run: |
           TAG=$(echo "${{ steps.meta.outputs.tags }}" | cut -d ':' -f2)
-          sed -i "s|image: $IMAGE_NAME:.*|image: $IMAGE_NAME:$TAG|g" deployment.yaml
+          sed -i "s|image: $IMAGE_NAME:.*|image: $IMAGE_NAME:$TAG|g" apps/deployment.yaml
           echo "Updated deployment.yaml with tag: $TAG"
 
       - name: commit and push updated deployment.yaml
@@ -51,7 +51,7 @@ jobs:
         run: |
             git config user.name "jagat2021"
             git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
-            git add deployment.yaml
+            git add apps/deployment.yaml
             git commit -m "Update deployment.yaml with new image tag"
             git push origin main
             
