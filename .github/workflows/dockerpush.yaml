@@ -46,11 +46,11 @@ jobs:
 
       - name: commit and push updated deployment.yaml
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_ACTION_TOKEN }}
+          GH_ACTION_TOKEN: ${{ secrets.GH_ACTION_TOKEN }}
 
         run: |
             git config user.name "jagat2021"
-            git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
+            git remote set-url origin https://x-access-token:${GH_ACTION_TOKEN}@github.com/${{ github.repository }}
             git add apps/deployment.yaml
             git commit -m "Update the deployment.yaml with new image tag"
             git push origin main
