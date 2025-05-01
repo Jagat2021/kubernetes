@@ -85,7 +85,7 @@ def get_html_template(body: str, title: str):
 @app.get("/", response_class=HTMLResponse)
 def home():
     return get_html_template("""
-        <h2>Welcome to the DevOps!</h2>
+        <h2>Welcome to the DevOps - WORLD!</h2>
         <p>Select a tab to view users, products, or city weather info.</p>
     """, "Home")
 
